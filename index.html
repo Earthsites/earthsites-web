@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Earthsites</title>
+  <meta name="description" content="Earthsites — discover and save places that matter." />
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <nav class="nav">
+      <a class="brand" href="/">Earthsites</a>
+      <div class="links">
+        <a href="/privacy">Privacy</a>
+        <a href="/support">Support</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <p class="kicker">🛰 Explore • Save • Share</p>
+      <h1>Find places worth remembering.</h1>
+      <p class="sub">
+        Earthsites helps you discover, organize, and revisit meaningful locations—your own map of the world.
+      </p>
+
+      <div class="cta">
+        <a class="button" href="#get">Get the app</a>
+        <a class="button ghost" href="/privacy">Privacy policy</a>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="badge">Coming soon</div>
+          <p class="card-title">iOS App (App Store)</p>
+          <p class="card-text">
+            Earthsites for iPhone is launching soon. For early access and updates, contact us below.
+          </p>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <div class="tile">
+        <h2>Nature-first design</h2>
+        <p>Calm visuals inspired by earth and sky, built for clarity and focus.</p>
+      </div>
+      <div class="tile">
+        <h2>Save what matters</h2>
+        <p>Keep a personal list of places—trips, memories, favorite spots, future plans.</p>
+      </div>
+      <div class="tile">
+        <h2>Built for privacy</h2>
+        <p>We keep things simple and transparent. Read the policy anytime.</p>
+      </div>
+    </section>
+
+    <section id="get" class="contact">
+      <h2>Contact</h2>
+      <p>
+        Support and inquiries:
+        <a href="mailto:support@earthsites.com">support@earthsites.com</a>
+      </p>
+      <p class="fine">
+        © <span id="y"></span> Earthsites LLC
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
