@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Earthsites — Support</title>
-  <meta name="description" content="Earthsites Support" />
+  <meta name="description" content="Earthsites support and contact." />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
@@ -19,23 +19,52 @@
 
     <section class="pagehead">
       <h1>Support</h1>
-      <p class="sub">We’ll help you get unstuck.</p>
+      <p class="sub">Send us a message using the form below.</p>
     </section>
   </header>
 
   <main class="wrap prose">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:support@earthsites.com">support@earthsites.com</a></p>
+    <div class="form-card">
+      <form class="contact-form" action="https://formspree.io/f/xaqdgovp" method="POST" id="supportForm">
+        <div class="field-row">
+          <label class="field">
+            <span>Your name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
 
-    <h2>Common questions</h2>
-    <h3>How do I report a bug?</h3>
-    <p>Email us with your device model, iOS version, and what you were doing when it happened.</p>
+          <label class="field">
+            <span>Your email</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+        </div>
 
-    <h3>How do I request data deletion?</h3>
-    <p>Email <a href="mailto:privacy@earthsites.com">privacy@earthsites.com</a>.</p>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
 
-    <p class="fine"><a href="/">← Back to Earthsites</a></p>
+        <!-- Lightweight math check (helps vs basic bots) -->
+        <label class="field">
+          <span>Quick check: what is 2 + 3?</span>
+          <input type="text" name="human_check" inputmode="numeric" pattern="5" placeholder="Type 5" required />
+        </label>
+
+        <!-- Honeypot (bots often fill it; humans won't) -->
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" />
+
+        <!-- Subject line in your inbox -->
+        <input type="hidden" name="_subject" value="Earthsites Support Request" />
+
+        <!-- Redirect to success page -->
+        <input type="hidden" name="_next" value="https://earthsites.com/thanks" />
+
+        <button type="submit" class="button">Send message</button>
+
+        <p class="fine" style="margin-top:10px;">
+          Please don’t include sensitive personal info. For privacy-related questions, mention “Privacy” in your message.
+        </p>
+      </form>
+    </div>
   </main>
 </body>
 </html>
-
