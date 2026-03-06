@@ -17,6 +17,9 @@ body{
     radial-gradient(900px 500px at 88% 15%, rgba(80,170,255,.22), transparent 55%),
     radial-gradient(800px 500px at 50% 92%, rgba(255,210,120,.14), transparent 55%),
     linear-gradient(180deg, #050808, #070b0a 35%, #050808);
+
+  background-size: 120% 120%;
+  animation: earthsitesAmbient 60s ease-in-out infinite alternate;
 }
 
 a{color:inherit; text-decoration:none}
@@ -25,14 +28,30 @@ a:hover{text-decoration:underline}
 .wrap{max-width:980px; margin:0 auto; padding:24px 20px}
 
 .nav{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 16px; border:1px solid var(--line); background:var(--glass);
-  border-radius:16px; backdrop-filter: blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 20px;
+  border:1px solid var(--line);
+  background:var(--glass);
+  border-radius:18px;
+  backdrop-filter: blur(10px);
 }
-.brand{font-weight:700; letter-spacing:.4px}
-.links a{opacity:.9; margin-left:14px}
-.links a.active{opacity:1; text-decoration:underline}
+.brand{
+  font-weight:600;
+  letter-spacing:.6px;
+  font-size:17px;
+}
+.links a{
+  opacity:.85;
+  margin-left:18px;
+  font-size:15px;
+  transition: opacity .15s ease;
+}
 
+.links a:hover{
+  opacity:1;
+}
 .hero{padding:34px 0 10px}
 .kicker{color:var(--muted); margin:0 0 10px}
 h1{font-size:44px; line-height:1.05; margin:0 0 12px}
@@ -71,11 +90,6 @@ h1{font-size:44px; line-height:1.05; margin:0 0 12px}
 .tile h2{font-size:18px; margin:0 0 6px}
 .tile p{margin:0; color:var(--muted)}
 
-.contact{
-  margin:24px 0 40px;
-  border:1px solid var(--line); background:var(--glass);
-  border-radius:18px; padding:16px;
-}
 .fine{color:var(--muted); font-size:13px}
 
 .prose{padding-top:0}
@@ -87,9 +101,218 @@ h1{font-size:44px; line-height:1.05; margin:0 0 12px}
 
 .pagehead{padding:22px 0 0}
 
+/* -----------------------------
+   Premium Support Form Styling
+------------------------------ */
+
+.form-card{
+  max-width:720px;
+  border:1px solid var(--line);
+  background:var(--glass);
+  border-radius:20px;
+  padding:20px;
+  transition: box-shadow .25s ease, border-color .25s ease;
+  margin: 0 auto;
+}
+
+/* subtle glow when user interacts with the form */
+.form-card:focus-within{
+  border-color: rgba(60,220,160,.45);
+  box-shadow: 0 0 0 1px rgba(60,220,160,.25),
+              0 12px 30px rgba(0,0,0,.35);
+}
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.field-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.field span{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(0,0,0,.18);
+  color:var(--fg);
+  outline:none;
+}
+
+.contact-form textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form select:focus,
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: rgba(60,220,160,.55);
+}
+
+.check{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background: rgba(0,0,0,.10);
+}
+
+.check input{
+  margin-top:2px;
+  width:16px;
+  height:16px;
+}
+
+.check span{
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.check a{ text-decoration: underline; }
+
+.hp{
+  display:none !important;
+}
+
+.button-submit{
+  color:#fff;
+  font-weight:600;
+  letter-spacing:.2px;
+  padding:13px 16px;
+  transition: transform .08s ease, filter .15s ease;
+}
+
+.button-submit:hover{
+  filter:brightness(1.1);
+}
+
+.button-submit:active{
+  transform: translateY(1px);
+}
+
+.calm-note{
+  margin-top:2px;
+  color: var(--muted);
+}
+
+/* Responsive */
 @media (max-width: 860px){
   h1{font-size:36px}
   .grid{grid-template-columns:1fr}
+  .field-row{ grid-template-columns: 1fr; }
+}
+@keyframes earthsitesAmbient{
+  0%{
+    background-position: 0% 0%;
+  }
+  100%{
+    background-position: 100% 100%;
+  }
+  /* --------------------------------
+   Subtle Earthsites starfield
+-------------------------------- */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.25), transparent),
+    radial-gradient(1px 1px at 25% 80%, rgba(255,255,255,.2), transparent),
+    radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,.18), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,.22), transparent),
+    radial-gradient(1px 1px at 75% 15%, rgba(255,255,255,.18), transparent),
+    radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,.2), transparent),
+    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,.16), transparent),
+    radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,.2), transparent);
+
+  opacity:.35;
+  z-index:-1;
+}
+@keyframes earthsitesAmbient{
+  0%{
+    background-position: 0% 0%;
+  }
+  100%{
+    background-position: 100% 100%;
+  }
 }
 
+/* --------------------------------
+   Subtle Earthsites starfield
+-------------------------------- */
 
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.25), transparent),
+    radial-gradient(1px 1px at 25% 80%, rgba(255,255,255,.2), transparent),
+    radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,.18), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,.22), transparent),
+    radial-gradient(1px 1px at 75% 15%, rgba(255,255,255,.18), transparent),
+    radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,.2), transparent),
+    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,.16), transparent),
+    radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,.2), transparent);
+  opacity:.35;
+  z-index:-1;
+  animation: earthsitesStars 8s ease-in-out infinite;
+}
+
+@keyframes earthsitesStars{
+  0%{opacity:.30}
+  50%{opacity:.40}
+  100%{opacity:.30}
+}
+
+/* --------------------------------
+   Earth horizon glow
+-------------------------------- */
+
+body::after{
+  content:"";
+  position:fixed;
+  left:50%;
+  bottom:-220px;
+  transform:translateX(-50%);
+  width:1400px;
+  height:520px;
+  pointer-events:none;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(60,220,160,.10) 0%,
+      rgba(80,170,255,.08) 28%,
+      rgba(255,255,255,.05) 42%,
+      rgba(0,0,0,0) 68%
+    );
+  filter: blur(22px);
+  opacity:.55;
+  z-index:-1;
+}
