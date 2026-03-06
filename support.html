@@ -25,46 +25,71 @@
 
   <main class="wrap prose">
     <div class="form-card">
-      <form class="contact-form" action="https://formspree.io/f/xaqdgovp" method="POST" id="supportForm">
-        <div class="field-row">
-          <label class="field">
-            <span>Your name</span>
-            <input type="text" name="name" autocomplete="name" required />
-          </label>
+      <form class="contact-form" action="https://formspree.io/f/xaqdgovp" method="POST">
+  <div class="field-row">
+    <label class="field">
+      <span>Name</span>
+      <input type="text" name="name" autocomplete="name" required />
+    </label>
 
-          <label class="field">
-            <span>Your email</span>
-            <input type="email" name="email" autocomplete="email" required />
-          </label>
-        </div>
+    <label class="field">
+      <span>Email</span>
+      <input type="email" name="email" autocomplete="email" required />
+    </label>
+  </div>
 
-        <label class="field">
-          <span>Message</span>
-          <textarea name="message" rows="6" required></textarea>
-        </label>
+  <label class="field">
+    <span>Topic</span>
+    <select name="topic" required>
+      <option value="" selected disabled>Select one…</option>
+      <option value="General Support">General Support</option>
+      <option value="Privacy">Privacy</option>
+      <option value="Bug Report">Bug Report</option>
+      <option value="Feature Request">Feature Request</option>
+    </select>
+  </label>
 
-        <!-- Lightweight math check (helps vs basic bots) -->
-        <label class="field">
-          <span>Quick check: what is 2 + 3?</span>
-          <input type="text" name="human_check" inputmode="numeric" pattern="5" placeholder="Type 5" required />
-        </label>
+  <label class="field">
+    <span>Message</span>
+    <textarea name="message" rows="6" required></textarea>
+  </label>
 
-        <!-- Honeypot (bots often fill it; humans won't) -->
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" />
+  <label class="field">
+    <span>Quick check: 2 + 3 =</span>
+    <input type="text" name="human_check" inputmode="numeric" pattern="5" placeholder="5" required />
+  </label>
 
-        <!-- Subject line in your inbox -->
-        <input type="hidden" name="_subject" value="Earthsites Support Request" />
+  <label class="check">
+    <input type="checkbox" name="privacy_consent" required />
+    <span>
+      I agree to the <a href="/privacy" target="_blank" rel="noopener">privacy policy</a>.
+    </span>
+  </label>
 
-        <!-- Redirect to success page -->
-        <input type="hidden" name="_next" value="https://earthsites.com/thanks" />
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" />
 
-        <button type="submit" class="button">Send message</button>
+  <input type="hidden" name="subject" value="Earthsites — {{topic}} — {{name}}" />
 
-        <p class="fine" style="margin-top:10px;">
-          Please don’t include sensitive personal info. For privacy-related questions, mention “Privacy” in your message.
-        </p>
-      </form>
+  <input type="hidden" name="_next" value="https://earthsites.com/thanks" />
+
+  <button type="submit" class="button button-submit">Send message</button>
+
+  <p class="fine calm-note">
+    You’ll see a confirmation after submitting. We respond as soon as we can.
+  </p>
+</form>
     </div>
   </main>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const topic = params.get("topic");
+
+  if (topic) {
+    const select = document.querySelector('select[name="topic"]');
+    if (select) {
+      select.value = topic;
+    }
+  }
+</script>
 </body>
 </html>
