@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Earthsites</title>
   <meta name="description" content="Earthsites is a location-aware environmental platform for climate awareness, sustainable living, and community action." />
-
+<meta property="og:title" content="Earthsites" />
+<meta property="og:description" content="Climate awareness. Sustainable living. Community action." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://earthsites.com" />
+<meta property="og:image" content="https://earthsites.com/social-preview.png" />
+<meta name="twitter:card" content="summary_large_image">
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="/favicon-tiny.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-glow-32x32.png">
@@ -47,14 +52,21 @@
       </div>
 
       <div class="card">
-        <div class="card-inner">
-          <div class="badge">Coming soon</div>
-          <p class="card-title">Earthsites for iOS (App Store)</p>
-          <p class="card-text">
-            Launching soon. For early access, partnerships, or press inquiries, please use the contact form below.
-          </p>
-        </div>
-      </div>
+  <div class="card-inner">
+    <div class="badge">App coming soon</div>
+
+    <p class="card-title">Earthsites for iOS</p>
+
+    <p class="card-text">
+      The first Earthsites mobile app is currently in development and will launch on the App Store soon.
+      It will include climate alerts, sustainability tools, and community insights — all mapped to your location.
+    </p>
+
+    <p class="fine" style="margin-top:8px;">
+      Interested in updates? <a href="/support">Contact us</a> to request early access information.
+    </p>
+  </div>
+</div>
     </section>
   </header>
 
@@ -75,30 +87,33 @@
         <p>Join a community feed, share insights, and participate in exchanges that turn intent into action.</p>
       </div>
     </section>
-
     <section class="tile" style="margin-top:14px;">
-      <h2>Built for clarity — designed for the real world</h2>
-      <p style="margin:0; color:var(--muted);">
-        Earthsites blends calm, informative guidance with action-forward tools and a collaborative community —
-        backed by a modern, location-aware platform.
-      </p>
-    </section>
+  <h2>Built for the real world</h2>
+  <p style="margin:0; color:var(--muted);">
+    Earthsites combines climate awareness, sustainability tools, and community insight
+    into a calm, location-aware platform designed to help people understand and respond
+    to the changing environment around them.
+  </p>
+</section>
 
     <section id="get" class="contact">
-      <h2>Contact</h2>
-      <p>
-        For support, partnerships, or early access, please use our <a href="/support">contact form</a>.
-      </p>
-      <p class="fine">
-        © <span id="y"></span> Earthsites LLC •
-        <a href="/support">Support</a> •
-        <a href="/privacy">Privacy</a>
-      </p>
-    </section>
-  </main>
+  <h2>Contact</h2>
+  <p>
+    For support, partnerships, or early access, please use our <a href="/support">contact form</a>.
+  </p>
+</section>
+</main>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<footer class="wrap" style="margin-top:40px;">
+  <p class="fine">
+    © <span id="y"></span> Earthsites LLC •
+    <a href="/support">Support</a> •
+    <a href="/privacy">Privacy Policy</a>
+  </p>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
