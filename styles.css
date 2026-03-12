@@ -332,24 +332,5 @@ body::before{
 -------------------------------- */
 
 body::after{
-  content:"";
-  position:fixed;
-  left:50%;
-  bottom:-340px;
-  transform:translateX(-50%);
-  width:1900px;
-  height:700px;
-  pointer-events:none;
-  border-radius:50%;
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(60,220,160,.12) 0%,
-      rgba(80,170,255,.10) 26%,
-      rgba(255,255,255,.04) 40%,
-      rgba(0,0,0,0) 68%
-    );
-  filter: blur(26px);
-  opacity:.75;
-  z-index:0;
+  display:none;
 }
