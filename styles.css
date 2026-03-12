@@ -17,10 +17,9 @@ body{
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background:
-    radial-gradient(900px 500px at 12% 10%, rgba(60,220,160,.25), transparent 60%),
-    radial-gradient(900px 500px at 88% 15%, rgba(80,170,255,.22), transparent 55%),
-    radial-gradient(800px 500px at 50% 92%, rgba(255,210,120,.14), transparent 55%),
-    linear-gradient(180deg, #050808, #070b0a 35%, #050808);
+  radial-gradient(900px 500px at 12% 10%, rgba(60,220,160,.22), transparent 60%),
+  radial-gradient(900px 500px at 88% 15%, rgba(80,170,255,.18), transparent 55%),
+  linear-gradient(180deg, #050808, #070b0a 35%, #050808);
   background-size:120% 120%;
   animation:earthsitesAmbient 60s ease-in-out infinite alternate;
 }
@@ -316,7 +315,7 @@ body::before{
     radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,.2), transparent),
     radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,.16), transparent),
     radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,.2), transparent);
-  opacity:.35;
+  opacity:.45;
   z-index:-1;
   animation: earthsitesStars 8s ease-in-out infinite;
 }
