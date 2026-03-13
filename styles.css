@@ -14,12 +14,9 @@ body{
   color:var(--fg);
   position:relative;
   overflow-x:hidden;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  background:
-  radial-gradient(900px 500px at 12% 10%, rgba(60,220,160,.22), transparent 60%),
-  radial-gradient(900px 500px at 88% 15%, rgba(80,170,255,.18), transparent 55%),
-  linear-gradient(180deg, #050808, #070b0a 35%, #050808);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background:#050808;
 }
 header, main, footer{
   text-align:center;
@@ -264,45 +261,9 @@ h1{
   .grid{grid-template-columns:1fr}
   .field-row{ grid-template-columns: 1fr; }
 
-
-@keyframes earthsitesStars{
-  0%{opacity:.45}
-  50%{opacity:.60}
-  100%{opacity:.45}
-}
-  /* --------------------------------
-   Subtle Earthsites starfield
--------------------------------- */
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.25), transparent),
-    radial-gradient(1px 1px at 25% 80%, rgba(255,255,255,.20), transparent),
-    radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,.18), transparent),
-    radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,.22), transparent),
-    radial-gradient(1px 1px at 75% 15%, rgba(255,255,255,.18), transparent),
-    radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,.20), transparent),
-    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,.16), transparent),
-    radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,.20), transparent);
-  opacity:.35;
-  z-index:0;
-  animation: earthsitesStars 8s ease-in-out infinite;
-}
-
 /* --------------------------------
    Subtle Earthsites starfield
 -------------------------------- */
-
-@keyframes earthsitesStars{
-  0%{opacity:.30}
-  50%{opacity:.40}
-  100%{opacity:.30}
-}
-
 /* --------------------------------
    Earth horizon glow
 -------------------------------- */
