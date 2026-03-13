@@ -26,6 +26,7 @@ header, main, footer{
 a{
   color:rgba(60,220,160,.95);
   text-decoration:none;
+  transition:color .15s ease;
 }
 a:hover{
   color:rgba(60,220,160,1);
@@ -81,14 +82,12 @@ h1{
 .button{
   display:inline-block; padding:12px 14px; border-radius:14px;
   background:rgba(60,220,160,.18); border:1px solid rgba(60,220,160,.35);
-  transition:transform .12s ease, box-shadow .18s ease, filter .15s ease;
+  transition: all .18s ease;
 }
-.button.ghost{background:transparent; border:1px solid var(--line)}
 .button:hover{
   text-decoration:none;
   filter:brightness(1.08);
-  transform:translateY(-1px);
-  box-shadow:0 6px 16px rgba(0,0,0,.35);
+ box-shadow:0 0 12px rgba(60,220,160,.35);
 }
 
 .card{
@@ -272,7 +271,8 @@ h1{
 @media (max-width: 860px){
   h1{font-size:36px}
   .grid{grid-template-columns:1fr}
-  .field-row{ grid-template-columns: 1fr; }
+  .field-row{ grid-template-columns: 1fr; } }
+  
 
 /* --------------------------------
    Subtle Earthsites starfield
